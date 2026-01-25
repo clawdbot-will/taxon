@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAXON - Costs Drafting for Mac</title>
+    <meta name="description" content="Professional legal costs drafting software for macOS. Precedent S, Precedent H, N260, and Traditional Bills of Costs.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: #00d4ff;
+            margin-bottom: 2rem;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .feature {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            color: #e2e8f0;
+        }
+        
+        .feature::before {
+            content: "✓ ";
+            color: #00d4ff;
+        }
+        
+        .cta {
+            margin-bottom: 2rem;
+        }
+        
+        .cta p {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .email-form input[type="email"] {
+            padding: 0.875rem 1.25rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-size: 1rem;
+            width: 280px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        .email-form input[type="email"]:focus {
+            border-color: #00d4ff;
+        }
+        
+        .email-form input[type="email"]::placeholder {
+            color: #64748b;
+        }
+        
+        .email-form button {
+            padding: 0.875rem 1.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            border: none;
+            border-radius: 0.5rem;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .email-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .comparison {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .comparison h3 {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .comparison-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        
+        .comparison-row.strike {
+            color: #64748b;
+            text-decoration: line-through;
+        }
+        
+        .comparison-row.highlight {
+            color: #00d4ff;
+            font-weight: 600;
+        }
+        
+        .footer {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+        
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #00d4ff;
+        }
+        
+        .mac-only {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .mac-only svg {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="badge">🚀 Coming Soon</div>
+        
+        <h1 class="logo">TAXON</h1>
+        <p class="tagline">Costs Drafting for Mac</p>
+        
+        <div class="features">
+            <span class="feature">Precedent S</span>
+            <span class="feature">Precedent H</span>
+            <span class="feature">N260</span>
+            <span class="feature">Traditional Bills</span>
+            <span class="feature">XML Import/Export</span>
+        </div>
+        
+        <div class="comparison">
+            <h3>Why TAXON?</h3>
+            <div class="comparison-row strike">
+                <span>Windows-only software</span>
+                <span>❌</span>
+            </div>
+            <div class="comparison-row strike">
+                <span>£400 setup fees</span>
+                <span>❌</span>
+            </div>
+            <div class="comparison-row highlight">
+                <span>Native macOS app</span>
+                <span>✓</span>
+            </div>
+            <div class="comparison-row highlight">
+                <span>£0 setup, simple pricing</span>
+                <span>✓</span>
+            </div>
+        </div>
+        
+        <div class="cta">
+            <p>Get notified when we launch:</p>
+            <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="email" name="email" placeholder="you@lawfirm.co.uk" required>
+                <button type="submit">Notify Me</button>
+            </form>
+        </div>
+        
+        <div class="mac-only">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <span>Built for macOS</span>
+        </div>
+        
+        <p class="footer" style="margin-top: 2rem;">
+            Built by <a href="https://costlawyer.co.uk">Mackenzie Costs</a>
+        </p>
+    </div>
+</body>
+</html>
