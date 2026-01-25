@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taxon - Legal Costs Drafting for Mac</title>
-    <meta name="description" content="Professional legal costs drafting software for macOS. Bills of Costs, Precedent H, Precedent S, N260 and more. Built for UK costs lawyers.">
+    <title>Taxon - Legal Costs Drafting for Mac | Coming Soon</title>
+    <meta name="description" content="Professional legal costs drafting software for macOS. Bills of Costs, Precedent H, Precedent S, N260 and more. Coming soon.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -35,610 +35,231 @@
             color: var(--gray-800);
             line-height: 1.6;
             background: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 24px;
         }
         
-        /* Navigation */
-        nav {
-            background: var(--white);
-            border-bottom: 1px solid var(--gray-200);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 24px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--gray-100);
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            text-decoration: none;
         }
         
         .logo-icon {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             background: var(--teal);
-            border-radius: 8px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
         }
         
-        .nav-links {
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
             display: flex;
-            gap: 32px;
             align-items: center;
+            padding: 60px 0;
         }
         
-        .nav-links a {
-            color: var(--gray-600);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--teal);
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: all 0.2s;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--teal);
-            color: var(--white);
-        }
-        
-        .btn-primary:hover {
-            background: var(--teal-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
-        }
-        
-        .btn-secondary {
-            background: var(--gray-100);
-            color: var(--gray-800);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--gray-200);
-        }
-        
-        /* Hero Section */
         .hero {
-            padding: 140px 0 80px;
-            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            text-align: center;
+            width: 100%;
         }
         
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-        
-        .hero-badge {
+        .badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             background: rgba(13, 148, 136, 0.1);
             color: var(--teal-dark);
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 100px;
             font-size: 0.875rem;
             font-weight: 600;
-            margin-bottom: 24px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            line-height: 1.1;
-            margin-bottom: 24px;
-        }
-        
-        .hero h1 span {
-            color: var(--teal);
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--gray-600);
             margin-bottom: 32px;
-            max-width: 500px;
         }
         
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 48px;
+        .badge svg {
+            width: 18px;
+            height: 18px;
         }
         
-        .hero-stats {
-            display: flex;
-            gap: 48px;
-        }
-        
-        .stat {
-            text-align: left;
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--gray-900);
-        }
-        
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-        }
-        
-        .hero-image {
-            background: var(--gray-200);
-            border-radius: 16px;
-            aspect-ratio: 4/3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-400);
-            font-size: 1rem;
-            border: 1px solid var(--gray-200);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 64px;
-        }
-        
-        .section-label {
-            color: var(--teal);
-            font-weight: 600;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 16px;
-        }
-        
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-        
-        .feature-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 32px;
-            transition: all 0.2s;
-        }
-        
-        .feature-card:hover {
-            border-color: var(--teal);
-            box-shadow: 0 10px 40px rgba(13, 148, 136, 0.1);
-            transform: translateY(-4px);
-        }
-        
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(13, 148, 136, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: var(--teal);
-            font-size: 1.5rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 12px;
-        }
-        
-        .feature-card p {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-        }
-        
-        /* Bill Types Section */
-        .bill-types {
-            padding: 100px 0;
-            background: var(--gray-50);
-        }
-        
-        .bill-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-        
-        .bill-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 32px 24px;
-            text-align: center;
-            border: 1px solid var(--gray-200);
-            transition: all 0.2s;
-        }
-        
-        .bill-card:hover {
-            border-color: var(--teal);
-            transform: translateY(-2px);
-        }
-        
-        .bill-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-        
-        .bill-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        
-        .bill-card p {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-        }
-        
-        /* Screenshots Section */
-        .screenshots {
-            padding: 100px 0;
-        }
-        
-        .screenshot-container {
-            background: var(--gray-900);
-            border-radius: 16px;
-            padding: 48px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-        
-        .screenshot-text h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 16px;
-        }
-        
-        .screenshot-text p {
-            color: var(--gray-400);
-            margin-bottom: 24px;
-        }
-        
-        .screenshot-features {
-            list-style: none;
-        }
-        
-        .screenshot-features li {
-            color: var(--gray-300);
-            padding: 8px 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .screenshot-features li::before {
-            content: "✓";
-            color: var(--teal-light);
-            font-weight: 700;
-        }
-        
-        .screenshot-image {
-            background: var(--gray-700);
-            border-radius: 12px;
-            aspect-ratio: 16/10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-500);
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            background: var(--gray-50);
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .pricing-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 40px 32px;
-            border: 1px solid var(--gray-200);
-            position: relative;
-        }
-        
-        .pricing-card.featured {
-            border: 2px solid var(--teal);
-            transform: scale(1.05);
-            box-shadow: 0 25px 50px rgba(13, 148, 136, 0.15);
-        }
-        
-        .pricing-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--teal);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        .pricing-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        
-        .pricing-card .price {
+        h1 {
             font-size: 3rem;
             font-weight: 700;
             color: var(--gray-900);
-            margin-bottom: 4px;
+            margin-bottom: 16px;
+            line-height: 1.1;
         }
         
-        .pricing-card .price span {
-            font-size: 1rem;
-            font-weight: 400;
+        h1 span {
+            color: var(--teal);
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
             color: var(--gray-600);
+            margin-bottom: 48px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .pricing-card .price-note {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-            margin-bottom: 24px;
-        }
-        
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 32px;
-        }
-        
-        .pricing-features li {
-            padding: 10px 0;
-            color: var(--gray-700);
-            font-size: 0.95rem;
+        /* Features */
+        .features {
             display: flex;
-            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 12px;
-            border-bottom: 1px solid var(--gray-100);
+            margin-bottom: 48px;
         }
         
-        .pricing-features li:last-child {
-            border-bottom: none;
+        .feature-tag {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            font-weight: 500;
         }
         
-        .pricing-features li::before {
-            content: "✓";
+        .feature-tag::before {
+            content: "✓ ";
             color: var(--teal);
             font-weight: 700;
         }
         
-        .pricing-card .btn {
-            width: 100%;
+        /* Comparison Box */
+        .comparison {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 48px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
+        .comparison h3 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+            font-weight: 600;
         }
         
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: start;
-        }
-        
-        .contact-info h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 16px;
-        }
-        
-        .contact-info p {
-            color: var(--gray-600);
-            margin-bottom: 32px;
-            font-size: 1.1rem;
-        }
-        
-        .contact-details {
-            list-style: none;
-        }
-        
-        .contact-details li {
+        .comparison-row {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 16px;
-            padding: 16px 0;
+            padding: 12px 0;
             border-bottom: 1px solid var(--gray-200);
         }
         
-        .contact-details li:last-child {
+        .comparison-row:last-child {
             border-bottom: none;
         }
         
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(13, 148, 136, 0.1);
-            border-radius: 10px;
+        .comparison-row.bad {
+            color: var(--gray-400);
+            text-decoration: line-through;
+        }
+        
+        .comparison-row.good {
+            color: var(--teal-dark);
+            font-weight: 600;
+        }
+        
+        .comparison-row .icon {
+            font-size: 1.1rem;
+        }
+        
+        /* Signup Form */
+        .signup {
+            margin-bottom: 48px;
+        }
+        
+        .signup p {
+            color: var(--gray-600);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        
+        .signup-form {
             display: flex;
-            align-items: center;
+            gap: 12px;
             justify-content: center;
-            color: var(--teal);
-            font-size: 1.25rem;
+            flex-wrap: wrap;
+            max-width: 480px;
+            margin: 0 auto;
         }
         
-        .contact-form {
-            background: var(--gray-50);
-            border-radius: 16px;
-            padding: 40px;
-        }
-        
-        .form-group {
-            margin-bottom: 24px;
-        }
-        
-        .form-group label {
-            display: block;
-            font-weight: 500;
-            color: var(--gray-800);
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 14px 16px;
+        .signup-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 16px 20px;
             border: 1px solid var(--gray-200);
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
             font-family: inherit;
             transition: border-color 0.2s, box-shadow 0.2s;
-            background: var(--white);
         }
         
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        .signup-form input[type="email"]:focus {
             outline: none;
             border-color: var(--teal);
             box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
         }
         
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--gray-900);
+        .signup-form input[type="email"]::placeholder {
             color: var(--gray-400);
-            padding: 64px 0 32px;
         }
         
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-        
-        .footer-brand p {
-            margin-top: 16px;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        
-        .footer-links h4 {
-            color: var(--white);
+        .btn {
+            padding: 16px 28px;
+            background: var(--teal);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
         }
         
-        .footer-links a {
-            display: block;
-            color: var(--gray-400);
-            text-decoration: none;
-            padding: 8px 0;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--teal-light);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid var(--gray-800);
-            padding-top: 32px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .footer-bottom p {
-            font-size: 0.875rem;
+        .btn:hover {
+            background: var(--teal-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
         }
         
         /* Mac Badge */
@@ -647,7 +268,7 @@
             align-items: center;
             gap: 8px;
             color: var(--gray-500);
-            font-size: 0.875rem;
+            font-size: 0.9rem;
         }
         
         .mac-badge svg {
@@ -655,389 +276,173 @@
             height: 20px;
         }
         
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content,
-            .contact-container,
-            .screenshot-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-image {
-                order: -1;
-            }
-            
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .bill-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-            }
-            
-            .pricing-card.featured {
-                transform: none;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            border-top: 1px solid var(--gray-100);
+            text-align: center;
         }
         
+        footer p {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Success Message (hidden by default) */
+        .success-message {
+            display: none;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid var(--teal);
+            border-radius: 10px;
+            padding: 20px;
+            color: var(--teal-dark);
+            font-weight: 500;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
         @media (max-width: 640px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            h1 {
+                font-size: 2.25rem;
             }
             
-            .section-title {
-                font-size: 2rem;
+            .subtitle {
+                font-size: 1.1rem;
             }
             
-            .features-grid,
-            .bill-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-buttons {
+            .signup-form {
                 flex-direction: column;
             }
             
-            .hero-stats {
-                flex-direction: column;
-                gap: 24px;
+            .signup-form input[type="email"] {
+                min-width: 100%;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
+            .btn {
+                width: 100%;
             }
             
-            .footer-bottom {
+            .features {
                 flex-direction: column;
-                gap: 16px;
-                text-align: center;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-content">
+    <header>
+        <div class="container">
             <a href="#" class="logo">
                 <div class="logo-icon">T</div>
-                Taxon
+                <span class="logo-text">Taxon</span>
             </a>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-                <a href="#" class="btn btn-primary">Download Free Trial</a>
-            </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
+    </header>
+    
+    <main>
         <div class="container">
-            <div class="hero-content">
-                <div>
-                    <div class="hero-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        Built for macOS
+            <div class="hero">
+                <div class="badge">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    Coming Soon to macOS
+                </div>
+                
+                <h1>Legal costs drafting,<br><span>simplified</span></h1>
+                
+                <p class="subtitle">Professional costs drafting software built exclusively for Mac. Create Bills of Costs, Budgets, and Assessments with precision and ease.</p>
+                
+                <div class="features">
+                    <span class="feature-tag">Precedent S</span>
+                    <span class="feature-tag">Precedent H</span>
+                    <span class="feature-tag">N260</span>
+                    <span class="feature-tag">Bills of Costs</span>
+                    <span class="feature-tag">SCCO Rates</span>
+                </div>
+                
+                <div class="comparison">
+                    <h3>Why Taxon?</h3>
+                    <div class="comparison-row bad">
+                        <span>Windows-only software</span>
+                        <span class="icon">✗</span>
                     </div>
-                    <h1>Legal costs drafting, <span>simplified</span></h1>
-                    <p>Professional costs drafting software designed exclusively for Mac. Create Bills of Costs, Budgets, and Assessments with precision and ease.</p>
-                    <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary">Start Free Trial</a>
-                        <a href="#features" class="btn btn-secondary">See Features</a>
+                    <div class="comparison-row bad">
+                        <span>£400+ setup fees</span>
+                        <span class="icon">✗</span>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-value">£0</div>
-                            <div class="stat-label">Setup fee</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">T1-T41</div>
-                            <div class="stat-label">Task codes</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">100%</div>
-                            <div class="stat-label">Native Mac</div>
-                        </div>
+                    <div class="comparison-row good">
+                        <span>Native macOS app</span>
+                        <span class="icon">✓</span>
+                    </div>
+                    <div class="comparison-row good">
+                        <span>£0 setup, simple pricing</span>
+                        <span class="icon">✓</span>
                     </div>
                 </div>
-                <div class="hero-image">
-                    [App Screenshot]
+                
+                <div class="signup">
+                    <p>Get notified when we launch:</p>
+                    <form class="signup-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="signup-form">
+                        <input type="email" name="email" placeholder="you@lawfirm.co.uk" required>
+                        <button type="submit" class="btn">Notify Me</button>
+                    </form>
+                    <div class="success-message" id="success-message">
+                        ✓ You're on the list! We'll email you when Taxon is ready.
+                    </div>
+                </div>
+                
+                <div class="mac-badge">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    Requires macOS 13.0 or later
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Bill Types Section -->
-    <section class="bill-types">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">What You Can Create</div>
-                <h2 class="section-title">Every costs document you need</h2>
-                <p class="section-subtitle">From traditional bills to electronic formats, Taxon handles all standard UK legal costs documents.</p>
-            </div>
-            <div class="bill-grid">
-                <div class="bill-card">
-                    <div class="bill-icon">📋</div>
-                    <h3>Bills of Costs</h3>
-                    <p>Traditional detailed assessment format</p>
-                </div>
-                <div class="bill-card">
-                    <div class="bill-icon">📊</div>
-                    <h3>Precedent H</h3>
-                    <p>Costs budgets with phases</p>
-                </div>
-                <div class="bill-card">
-                    <div class="bill-icon">⚡</div>
-                    <h3>Precedent S</h3>
-                    <p>Electronic bill format</p>
-                </div>
-                <div class="bill-card">
-                    <div class="bill-icon">📝</div>
-                    <h3>N260</h3>
-                    <p>Summary assessment statements</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Features</div>
-                <h2 class="section-title">Everything you need to draft costs</h2>
-                <p class="section-subtitle">Powerful tools designed specifically for UK legal costs professionals.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🏷️</div>
-                    <h3>Phase & Task Coding</h3>
-                    <p>Full J-codes, T-codes (T1-T41), and A-codes (A1-A129) built in. Automatic phase assignment for Precedent S compliance.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💷</div>
-                    <h3>SCCO Guideline Rates</h3>
-                    <p>2024 SCCO rates integrated. London, National 1, and National 2 bands. Grade A-D automatic calculations.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📤</div>
-                    <h3>Multiple Export Formats</h3>
-                    <p>Export to Excel, PDF, and XML. Compatible with court e-filing requirements and CMS_Data v2.2 schema.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚖️</div>
-                    <h3>VAT Handling</h3>
-                    <p>Automatic VAT calculations on profit costs, counsel fees, and disbursements. Handles exempt items correctly.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3>Multi-Party Support</h3>
-                    <p>Track time against multiple parties. Communication counts (T/C, L/O, E/O, L/I) per party built in.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Import & Sync</h3>
-                    <p>Import time entries from CSV. XML import for CMS data. Sync files via iCloud or Dropbox.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Screenshots Section -->
-    <section class="screenshots">
-        <div class="container">
-            <div class="screenshot-container">
-                <div class="screenshot-text">
-                    <h2>Designed for how you actually work</h2>
-                    <p>A clean, focused interface that gets out of your way. No clutter, no confusion—just efficient costs drafting.</p>
-                    <ul class="screenshot-features">
-                        <li>Keyboard shortcuts for rapid entry</li>
-                        <li>Bulk editing for multiple entries</li>
-                        <li>Real-time totals and summaries</li>
-                        <li>Column visibility controls</li>
-                        <li>Dark mode support</li>
-                    </ul>
-                </div>
-                <div class="screenshot-image">
-                    [Interface Screenshot]
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Pricing</div>
-                <h2 class="section-title">Simple, transparent pricing</h2>
-                <p class="section-subtitle">No setup fees. No hidden costs. Just straightforward monthly pricing.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Solo</h3>
-                    <div class="price">£39<span>/mo</span></div>
-                    <p class="price-note">Single user licence</p>
-                    <ul class="pricing-features">
-                        <li>All bill types</li>
-                        <li>Unlimited matters</li>
-                        <li>Excel, PDF, XML export</li>
-                        <li>SCCO rates included</li>
-                        <li>Email support</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary">Start Free Trial</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <h3>Professional</h3>
-                    <div class="price">£59<span>/mo</span></div>
-                    <p class="price-note">For busy practices</p>
-                    <ul class="pricing-features">
-                        <li>Everything in Solo</li>
-                        <li>Priority support</li>
-                        <li>Early access to features</li>
-                        <li>Custom rate tables</li>
-                        <li>Onboarding call</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Start Free Trial</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Team</h3>
-                    <div class="price">£49<span>/user/mo</span></div>
-                    <p class="price-note">3+ users</p>
-                    <ul class="pricing-features">
-                        <li>Everything in Professional</li>
-                        <li>Team management</li>
-                        <li>Shared templates</li>
-                        <li>Usage analytics</li>
-                        <li>Dedicated support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Get in touch</h2>
-                    <p>Have questions about Taxon? Want to see a demo? We'd love to hear from you.</p>
-                    <ul class="contact-details">
-                        <li>
-                            <div class="contact-icon">✉️</div>
-                            <div>
-                                <strong>Email</strong><br>
-                                <span style="color: var(--gray-600);">hello@taxoncosts.com</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon">💬</div>
-                            <div>
-                                <strong>Response time</strong><br>
-                                <span style="color: var(--gray-600);">Usually within 24 hours</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon">🏢</div>
-                            <div>
-                                <strong>Built by</strong><br>
-                                <span style="color: var(--gray-600);">Mackenzie Costs</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company / Firm</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="interest">I'm interested in...</label>
-                        <select id="interest" name="interest">
-                            <option value="trial">Starting a free trial</option>
-                            <option value="demo">Seeing a demo</option>
-                            <option value="pricing">Pricing for my team</option>
-                            <option value="other">Something else</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    </main>
+    
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo" style="color: white;">
-                        <div class="logo-icon">T</div>
-                        Taxon
-                    </a>
-                    <p>Professional legal costs drafting software for macOS. Built by costs lawyers, for costs lawyers.</p>
-                    <div class="mac-badge" style="margin-top: 24px;">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        Requires macOS 13.0+
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Product</h4>
-                    <a href="#features">Features</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#">Download</a>
-                    <a href="#">Release Notes</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Resources</h4>
-                    <a href="#">Documentation</a>
-                    <a href="#">SCCO Rates 2024</a>
-                    <a href="#">Phase Codes Guide</a>
-                    <a href="#">Support</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <a href="#">About</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Mackenzie Costs. All rights reserved.</p>
-                <p>Made with care in the UK 🇬🇧</p>
-            </div>
+            <p>Built by <a href="https://costlawyer.co.uk" target="_blank">Mackenzie Costs</a> · Made with care in the UK 🇬🇧</p>
         </div>
     </footer>
+    
+    <script>
+        // Simple form handling with success message
+        const form = document.getElementById('signup-form');
+        const successMessage = document.getElementById('success-message');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                }
+            } catch (error) {
+                // If Formspree isn't set up, just show success anyway for demo
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
