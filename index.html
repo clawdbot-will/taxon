@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taxon - Legal Costs Drafting for Mac | Coming Soon</title>
-    <meta name="description" content="Professional legal costs drafting software for macOS. Bills of Costs, Precedent H, Precedent S, N260 and more. Coming soon.">
+    <meta name="description" content="Professional legal costs drafting software for macOS. Bills of Costs, Precedent H, Precedent S, N260 and more. Built by a practising Costs Lawyer.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,10 +21,12 @@
             --teal: #0D9488;
             --teal-light: #14B8A6;
             --teal-dark: #0F766E;
+            --teal-subtle: #ccfbf1;
             --gray-900: #1F2937;
             --gray-800: #374151;
             --gray-700: #4B5563;
             --gray-600: #6B7280;
+            --gray-500: #9CA3AF;
             --gray-400: #9CA3AF;
             --gray-200: #E5E7EB;
             --gray-100: #F3F4F6;
@@ -43,12 +45,15 @@
             color: var(--gray-800);
             line-height: 1.6;
             background: var(--white);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
         
         .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .container-narrow {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 24px;
@@ -86,17 +91,10 @@
             color: var(--gray-900);
         }
         
-        /* Main Content */
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            padding: 60px 0;
-        }
-        
+        /* Hero Section */
         .hero {
+            padding: 80px 0 60px;
             text-align: center;
-            width: 100%;
         }
         
         .badge {
@@ -132,64 +130,513 @@
         .subtitle {
             font-size: 1.25rem;
             color: var(--gray-600);
-            margin-bottom: 48px;
-            max-width: 550px;
+            margin-bottom: 32px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
         
-        /* Features */
-        .features {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
+        .credibility {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--gray-700);
             margin-bottom: 48px;
         }
         
-        .feature-tag {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: var(--gray-700);
+        .credibility svg {
+            width: 20px;
+            height: 20px;
+            color: var(--teal);
+        }
+        
+        /* App Preview */
+        .app-preview {
+            margin: 0 auto 60px;
+            max-width: 900px;
+        }
+        
+        .app-window {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .app-titlebar {
+            background: linear-gradient(to bottom, #e8e8e8, #d8d8d8);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #c0c0c0;
+        }
+        
+        .window-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .window-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .btn-close { background: #ff5f57; }
+        .btn-minimize { background: #ffbd2e; }
+        .btn-maximize { background: #28ca41; }
+        
+        .window-title {
+            flex: 1;
+            text-align: center;
+            font-size: 13px;
+            color: #4a4a4a;
             font-weight: 500;
         }
         
-        .feature-tag::before {
-            content: "✓ ";
-            color: var(--teal);
-            font-weight: 700;
+        .app-content {
+            display: flex;
+            min-height: 400px;
         }
         
-        /* Comparison Box */
-        .comparison {
+        .app-sidebar {
+            width: 200px;
             background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 48px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            border-right: 1px solid var(--gray-200);
+            padding: 16px 8px;
         }
         
-        .comparison h3 {
-            font-size: 0.75rem;
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            margin-bottom: 16px;
+        }
+        
+        .sidebar-brand-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--teal);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .sidebar-brand-text {
+            font-weight: 600;
+            color: var(--teal-dark);
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 16px;
+        }
+        
+        .sidebar-section-title {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 12px;
+            margin-bottom: 4px;
+        }
+        
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--gray-700);
+        }
+        
+        .sidebar-item.active {
+            background: var(--teal);
+            color: white;
+        }
+        
+        .app-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .app-toolbar {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gray-50);
+        }
+        
+        .toolbar-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--gray-800);
+        }
+        
+        .toolbar-spacer { flex: 1; }
+        
+        .toolbar-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid var(--gray-200);
+            background: white;
+            color: var(--gray-700);
+        }
+        
+        .toolbar-btn.primary {
+            background: var(--teal);
+            color: white;
+            border-color: var(--teal);
+        }
+        
+        .app-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--gray-200);
+            padding: 0 20px;
+            background: #fafafa;
+        }
+        
+        .app-tab {
+            padding: 10px 16px;
+            font-size: 12px;
+            color: var(--gray-500);
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+        }
+        
+        .app-tab.active {
+            color: var(--teal);
+            border-bottom-color: var(--teal);
+            font-weight: 500;
+        }
+        
+        .app-data {
+            padding: 20px;
+            flex: 1;
+        }
+        
+        .stats-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            flex: 1;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            padding: 12px;
+        }
+        
+        .stat-label {
+            font-size: 10px;
+            color: var(--gray-500);
+            margin-bottom: 2px;
+        }
+        
+        .stat-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+        
+        .stat-value.teal {
+            color: var(--teal);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 8px 10px;
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-200);
+            font-weight: 600;
+            color: var(--gray-500);
+            font-size: 10px;
+        }
+        
+        .data-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--gray-100);
+            color: var(--gray-700);
+        }
+        
+        .phase-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            background: var(--teal-subtle);
+            color: var(--teal-dark);
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 500;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .section-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--teal);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: var(--gray-500);
-            margin-bottom: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.2s;
+        }
+        
+        .feature-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--teal-subtle);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        
+        .feature-title {
+            font-size: 1rem;
             font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        
+        .feature-desc {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+        
+        /* Why Mac Section */
+        .why-mac-section {
+            padding: 80px 0;
+        }
+        
+        .why-mac-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .why-mac-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+        }
+        
+        .why-mac-list {
+            list-style: none;
+        }
+        
+        .why-mac-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .why-mac-list .check {
+            width: 24px;
+            height: 24px;
+            background: var(--teal-subtle);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--teal);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .why-mac-list h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+        
+        .why-mac-list p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+        
+        .why-mac-visual {
+            background: linear-gradient(135deg, var(--teal-subtle) 0%, #e0f2f1 100%);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mac-icon {
+            font-size: 120px;
+            opacity: 0.9;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        
+        .pricing-box {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid var(--teal);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .pricing-header {
+            margin-bottom: 32px;
+        }
+        
+        .pricing-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+        
+        .pricing-price span {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--gray-500);
+        }
+        
+        .pricing-note {
+            font-size: 1rem;
+            color: var(--gray-600);
+            margin-top: 8px;
+        }
+        
+        .pricing-details {
+            background: var(--gray-50);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .pricing-detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 0.95rem;
+        }
+        
+        .pricing-detail-row:not(:last-child) {
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .pricing-detail-row span:first-child {
+            color: var(--gray-600);
+        }
+        
+        .pricing-detail-row span:last-child {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+        
+        .pricing-comparison {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        
+        .pricing-comparison h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
         }
         
         .comparison-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--gray-200);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-100);
         }
         
         .comparison-row:last-child {
@@ -206,19 +653,23 @@
             font-weight: 600;
         }
         
-        .comparison-row .icon {
-            font-size: 1.1rem;
+        /* Signup Section */
+        .signup-section {
+            padding: 80px 0;
+            text-align: center;
         }
         
-        /* Signup Form */
-        .signup {
-            margin-bottom: 48px;
-        }
-        
-        .signup p {
-            color: var(--gray-600);
+        .signup-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
             margin-bottom: 16px;
-            font-size: 1rem;
+        }
+        
+        .signup-section p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 32px;
         }
         
         .signup-form {
@@ -227,7 +678,7 @@
             justify-content: center;
             flex-wrap: wrap;
             max-width: 480px;
-            margin: 0 auto;
+            margin: 0 auto 24px;
         }
         
         .signup-form input[type="email"] {
@@ -245,10 +696,6 @@
             outline: none;
             border-color: var(--teal);
             box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
-        }
-        
-        .signup-form input[type="email"]::placeholder {
-            color: var(--gray-400);
         }
         
         .btn {
@@ -270,7 +717,6 @@
             box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
         }
         
-        /* Mac Badge */
         .mac-badge {
             display: inline-flex;
             align-items: center;
@@ -282,6 +728,18 @@
         .mac-badge svg {
             width: 20px;
             height: 20px;
+        }
+        
+        .success-message {
+            display: none;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid var(--teal);
+            border-radius: 10px;
+            padding: 20px;
+            color: var(--teal-dark);
+            font-weight: 500;
+            max-width: 480px;
+            margin: 0 auto;
         }
         
         /* Footer */
@@ -305,27 +763,27 @@
             text-decoration: underline;
         }
         
-        /* Success Message (hidden by default) */
-        .success-message {
-            display: none;
-            background: rgba(13, 148, 136, 0.1);
-            border: 1px solid var(--teal);
-            border-radius: 10px;
-            padding: 20px;
-            color: var(--teal-dark);
-            font-weight: 500;
-            max-width: 480px;
-            margin: 0 auto;
-        }
-        
         /* Responsive */
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             h1 {
                 font-size: 2.25rem;
             }
             
-            .subtitle {
-                font-size: 1.1rem;
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .app-preview {
+                display: none;
+            }
+            
+            .why-mac-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .why-mac-visual {
+                order: -1;
             }
             
             .signup-form {
@@ -340,9 +798,12 @@
                 width: 100%;
             }
             
-            .features {
-                flex-direction: column;
-                align-items: center;
+            .stats-row {
+                flex-wrap: wrap;
+            }
+            
+            .stat-card {
+                min-width: calc(50% - 6px);
             }
         }
     </style>
@@ -357,63 +818,298 @@
         </div>
     </header>
     
-    <main>
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <div class="hero">
-                <div class="badge">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                    Coming Soon to macOS
+            <div class="badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Coming Soon to macOS
+            </div>
+            
+            <h1>Legal costs drafting,<br><span>simplified</span></h1>
+            
+            <p class="subtitle">Professional costs drafting software built exclusively for Mac. Create Bills of Costs, Budgets, and Cost Schedules with precision and ease.</p>
+            
+            <div class="credibility">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Built by a practising Costs Lawyer with over 18 years experience
+            </div>
+        </div>
+    </section>
+    
+    <!-- App Preview -->
+    <div class="app-preview">
+        <div class="container">
+            <div class="app-window">
+                <div class="app-titlebar">
+                    <div class="window-buttons">
+                        <div class="window-btn btn-close"></div>
+                        <div class="window-btn btn-minimize"></div>
+                        <div class="window-btn btn-maximize"></div>
+                    </div>
+                    <div class="window-title">Smith v Jones - Taxon</div>
                 </div>
-                
-                <h1>Legal costs drafting,<br><span>simplified</span></h1>
-                
-                <p class="subtitle">Professional costs drafting software built exclusively for Mac. Create Bills of Costs, Budgets, and Cost Schedules with precision and ease.</p>
-                
-                <div class="features">
-                    <span class="feature-tag">Bills of Costs</span>
-                    <span class="feature-tag">Precedent S</span>
-                    <span class="feature-tag">Precedent H</span>
-                    <span class="feature-tag">N260</span>
-                </div>
-                
-                <div class="comparison">
-                    <h3>Why Taxon?</h3>
-                    <div class="comparison-row bad">
-                        <span>Windows-only software</span>
-                        <span class="icon">✗</span>
+                <div class="app-content">
+                    <div class="app-sidebar">
+                        <div class="sidebar-brand">
+                            <div class="sidebar-brand-icon">T</div>
+                            <div class="sidebar-brand-text">TAXON</div>
+                        </div>
+                        <div class="sidebar-section">
+                            <div class="sidebar-section-title">Matter</div>
+                            <div class="sidebar-item">📋 Matter Details</div>
+                            <div class="sidebar-item active">⏱ Time Ledger</div>
+                            <div class="sidebar-item">👥 Parties</div>
+                        </div>
+                        <div class="sidebar-section">
+                            <div class="sidebar-section-title">Bills</div>
+                            <div class="sidebar-item">📄 Precedent S</div>
+                            <div class="sidebar-item">📊 Precedent H</div>
+                            <div class="sidebar-item">📝 N260</div>
+                        </div>
                     </div>
-                    <div class="comparison-row bad">
-                        <span>CostsMaster: £400 setup + £75/mo</span>
-                        <span class="icon">✗</span>
+                    <div class="app-main">
+                        <div class="app-toolbar">
+                            <div class="toolbar-title">Time Ledger</div>
+                            <div class="toolbar-spacer"></div>
+                            <button class="toolbar-btn">Import</button>
+                            <button class="toolbar-btn primary">+ Add Entry</button>
+                        </div>
+                        <div class="app-tabs">
+                            <div class="app-tab active">Time Entries</div>
+                            <div class="app-tab">Disbursements</div>
+                            <div class="app-tab">Counsel</div>
+                        </div>
+                        <div class="app-data">
+                            <div class="stats-row">
+                                <div class="stat-card">
+                                    <div class="stat-label">Entries</div>
+                                    <div class="stat-value">247</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-label">Hours</div>
+                                    <div class="stat-value">84.5</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-label">Profit Costs</div>
+                                    <div class="stat-value teal">£24,350</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-label">Disbursements</div>
+                                    <div class="stat-value">£8,420</div>
+                                </div>
+                            </div>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>FE</th>
+                                        <th>Description</th>
+                                        <th>Phase</th>
+                                        <th>Units</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>24/01/2026</td>
+                                        <td>WM</td>
+                                        <td>Review medical evidence and draft schedule</td>
+                                        <td><span class="phase-badge">Experts</span></td>
+                                        <td>12</td>
+                                        <td>£490.80</td>
+                                    </tr>
+                                    <tr>
+                                        <td>23/01/2026</td>
+                                        <td>WM</td>
+                                        <td>Attendance on client re settlement</td>
+                                        <td><span class="phase-badge">ADR</span></td>
+                                        <td>8</td>
+                                        <td>£327.20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/01/2026</td>
+                                        <td>JB</td>
+                                        <td>Prepare witness statement</td>
+                                        <td><span class="phase-badge">Witness</span></td>
+                                        <td>15</td>
+                                        <td>£445.50</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="comparison-row good">
-                        <span>Native macOS app</span>
-                        <span class="icon">✓</span>
-                    </div>
-                    <div class="comparison-row good">
-                        <span>Taxon: £99 first month, then £49.99/mo</span>
-                        <span class="icon">✓</span>
-                    </div>
-                </div>
-                
-                <div class="signup">
-                    <p>Get notified when we launch:</p>
-                    <form class="signup-form" action="https://formspree.io/f/mlgjkoaz" method="POST" id="signup-form">
-                        <input type="email" name="email" placeholder="you@lawfirm.co.uk" required>
-                        <button type="submit" class="btn">Notify Me</button>
-                    </form>
-                    <div class="success-message" id="success-message">
-                        ✓ You're on the list! We'll email you when Taxon is ready.
-                    </div>
-                </div>
-                
-                <div class="mac-badge">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                    Requires macOS 13.0 or later
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+    
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Features</div>
+                <h2 class="section-title">Everything you need to draft costs</h2>
+                <p class="section-subtitle">Comprehensive tools designed specifically for UK costs law practice</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Precedent S & H Exports</h3>
+                    <p class="feature-desc">Generate compliant Excel exports in the correct format for electronic bills and costs budgets.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💷</div>
+                    <h3 class="feature-title">SCCO Guideline Rates</h3>
+                    <p class="feature-desc">Built-in current SCCO guideline rates for London and national rates, always up to date.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3 class="feature-title">Phase/Task/Activity Codes</h3>
+                    <p class="feature-desc">Full J-code, T-code, and A-code support for proper bill categorisation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3 class="feature-title">Multiple Export Formats</h3>
+                    <p class="feature-desc">Export to PDF, Excel, CSV, and XML. Compatible with court requirements.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="feature-title">N260 & N252 Generation</h3>
+                    <p class="feature-desc">Quick generation of summary assessment documents for hearings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">Costs Budgets</h3>
+                    <p class="feature-desc">Create and manage Precedent H costs budgets with incurred and estimated breakdowns.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title">Fee Earner Management</h3>
+                    <p class="feature-desc">Track multiple fee earners with different grades and hourly rates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <h3 class="feature-title">Quick Preview</h3>
+                    <p class="feature-desc">Instantly preview bills and schedules before export. See exactly what you'll get.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Mac Section -->
+    <section class="why-mac-section">
+        <div class="container">
+            <div class="why-mac-grid">
+                <div class="why-mac-content">
+                    <h2>Why a Mac app?</h2>
+                    <ul class="why-mac-list">
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <h4>Native macOS Performance</h4>
+                                <p>Built with Swift specifically for Mac. Fast, responsive, and uses minimal system resources.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <h4>No Windows Emulation</h4>
+                                <p>Stop running Parallels or Boot Camp just for costs software. Taxon runs natively on Apple Silicon and Intel Macs.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <h4>Clean, Modern Interface</h4>
+                                <p>Designed to feel at home on macOS. Familiar keyboard shortcuts, drag-and-drop, and system integration.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <h4>Works Offline</h4>
+                                <p>Your data stays on your Mac. No internet required for day-to-day use.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="why-mac-visual">
+                    <div class="mac-icon">🍎</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Pricing</div>
+                <h2 class="section-title">Simple, transparent pricing</h2>
+                <p class="section-subtitle">No hidden fees. No long-term contracts.</p>
+            </div>
+            <div class="pricing-box">
+                <div class="pricing-header">
+                    <div class="pricing-label">Get Started</div>
+                    <div class="pricing-price">£99 <span>first month</span></div>
+                    <p class="pricing-note">Then just £49.99/month</p>
+                </div>
+                <div class="pricing-details">
+                    <div class="pricing-detail-row">
+                        <span>First month (includes setup)</span>
+                        <span>£99</span>
+                    </div>
+                    <div class="pricing-detail-row">
+                        <span>Monthly thereafter</span>
+                        <span>£49.99</span>
+                    </div>
+                    <div class="pricing-detail-row">
+                        <span>Long-term contract</span>
+                        <span>None</span>
+                    </div>
+                </div>
+                <div class="pricing-comparison">
+                    <h4>Compare to CostsMaster</h4>
+                    <div class="comparison-row bad">
+                        <span>CostsMaster setup fee</span>
+                        <span>£400</span>
+                    </div>
+                    <div class="comparison-row bad">
+                        <span>CostsMaster monthly</span>
+                        <span>£75/mo</span>
+                    </div>
+                    <div class="comparison-row good">
+                        <span>Taxon first month</span>
+                        <span>£99</span>
+                    </div>
+                    <div class="comparison-row good">
+                        <span>Taxon monthly</span>
+                        <span>£49.99/mo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Signup Section -->
+    <section class="signup-section" id="signup">
+        <div class="container-narrow">
+            <h2>Get notified when we launch</h2>
+            <p>Be the first to know when Taxon is ready. No spam, just one email.</p>
+            <form class="signup-form" action="https://formspree.io/f/mlgjkoaz" method="POST" id="signup-form">
+                <input type="email" name="email" placeholder="you@lawfirm.co.uk" required>
+                <button type="submit" class="btn">Notify Me</button>
+            </form>
+            <div class="success-message" id="success-message">
+                ✓ You're on the list! We'll email you when Taxon is ready.
+            </div>
+            <div class="mac-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Requires macOS 13.0 or later
+            </div>
+        </div>
+    </section>
     
     <footer>
         <div class="container">
@@ -422,22 +1118,18 @@
     </footer>
     
     <script>
-        // Simple form handling with success message
         const form = document.getElementById('signup-form');
         const successMessage = document.getElementById('success-message');
         
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
             const formData = new FormData(form);
             
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
                 
                 if (response.ok) {
@@ -445,7 +1137,6 @@
                     successMessage.style.display = 'block';
                 }
             } catch (error) {
-                // If Formspree isn't set up, just show success anyway for demo
                 form.style.display = 'none';
                 successMessage.style.display = 'block';
             }
