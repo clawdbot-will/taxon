@@ -548,13 +548,59 @@
             background: var(--gray-50);
         }
         
+        .pricing-grid-two {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+        
         .pricing-box {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .pricing-box.featured {
+            border: 2px solid var(--teal);
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.15);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--teal);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .pricing-comparison-box {
             max-width: 500px;
             margin: 0 auto;
             background: white;
-            border: 2px solid var(--teal);
-            border-radius: 16px;
-            padding: 40px;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .pricing-comparison-box h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
             text-align: center;
         }
         
@@ -805,6 +851,10 @@
             .stat-card {
                 min-width: calc(50% - 6px);
             }
+            
+            .pricing-grid-two {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -1042,44 +1092,68 @@
                 <h2 class="section-title">Simple, transparent pricing</h2>
                 <p class="section-subtitle">No hidden fees. No long-term contracts.</p>
             </div>
-            <div class="pricing-box">
-                <div class="pricing-header">
-                    <div class="pricing-label">Get Started</div>
-                    <div class="pricing-price">£99 <span>first month</span></div>
-                    <p class="pricing-note">Then just £49.99/month</p>
+            <div class="pricing-grid-two">
+                <div class="pricing-box">
+                    <div class="pricing-header">
+                        <div class="pricing-label">Monthly</div>
+                        <div class="pricing-price">£59 <span>/month</span></div>
+                        <p class="pricing-note">First month £149 (includes setup)</p>
+                    </div>
+                    <div class="pricing-details">
+                        <div class="pricing-detail-row">
+                            <span>First month</span>
+                            <span>£149</span>
+                        </div>
+                        <div class="pricing-detail-row">
+                            <span>Monthly thereafter</span>
+                            <span>£59</span>
+                        </div>
+                        <div class="pricing-detail-row">
+                            <span>Cancel anytime</span>
+                            <span>✓</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="pricing-details">
-                    <div class="pricing-detail-row">
-                        <span>First month (includes setup)</span>
-                        <span>£99</span>
+                <div class="pricing-box featured">
+                    <div class="pricing-badge">Best Value</div>
+                    <div class="pricing-header">
+                        <div class="pricing-label">Annual</div>
+                        <div class="pricing-price">£699 <span>/year</span></div>
+                        <p class="pricing-note">Save over £150 vs monthly</p>
                     </div>
-                    <div class="pricing-detail-row">
-                        <span>Monthly thereafter</span>
-                        <span>£49.99</span>
-                    </div>
-                    <div class="pricing-detail-row">
-                        <span>Long-term contract</span>
-                        <span>None</span>
+                    <div class="pricing-details">
+                        <div class="pricing-detail-row">
+                            <span>Per month equivalent</span>
+                            <span>£58.25</span>
+                        </div>
+                        <div class="pricing-detail-row">
+                            <span>Setup included</span>
+                            <span>✓</span>
+                        </div>
+                        <div class="pricing-detail-row">
+                            <span>Pay once, use all year</span>
+                            <span>✓</span>
+                        </div>
                     </div>
                 </div>
-                <div class="pricing-comparison">
-                    <h4>Compare to CostsMaster</h4>
-                    <div class="comparison-row bad">
-                        <span>CostsMaster setup fee</span>
-                        <span>£400</span>
-                    </div>
-                    <div class="comparison-row bad">
-                        <span>CostsMaster monthly</span>
-                        <span>£75/mo</span>
-                    </div>
-                    <div class="comparison-row good">
-                        <span>Taxon first month</span>
-                        <span>£99</span>
-                    </div>
-                    <div class="comparison-row good">
-                        <span>Taxon monthly</span>
-                        <span>£49.99/mo</span>
-                    </div>
+            </div>
+            <div class="pricing-comparison-box">
+                <h4>Compare to CostsMaster</h4>
+                <div class="comparison-row bad">
+                    <span>CostsMaster setup fee</span>
+                    <span>£400</span>
+                </div>
+                <div class="comparison-row bad">
+                    <span>CostsMaster monthly</span>
+                    <span>£75/mo</span>
+                </div>
+                <div class="comparison-row good">
+                    <span>Taxon monthly</span>
+                    <span>£59/mo</span>
+                </div>
+                <div class="comparison-row good">
+                    <span>Taxon annual</span>
+                    <span>£699/year</span>
                 </div>
             </div>
         </div>
