@@ -65,11 +65,133 @@
             border-bottom: 1px solid var(--gray-100);
         }
         
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
             text-decoration: none;
+        }
+        
+        .header-cta {
+            position: relative;
+        }
+        
+        .header-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--teal);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .header-cta-btn:hover {
+            background: var(--teal-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+        }
+        
+        .header-cta-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .header-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+            width: 320px;
+            z-index: 100;
+            animation: dropdownFade 0.2s ease;
+        }
+        
+        .header-dropdown.show {
+            display: block;
+        }
+        
+        @keyframes dropdownFade {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header-dropdown h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+        
+        .header-dropdown p {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+        
+        .header-dropdown-form {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .header-dropdown-form input[type="email"] {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .header-dropdown-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+        }
+        
+        .header-dropdown-form button {
+            padding: 10px 16px;
+            background: var(--teal);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        
+        .header-dropdown-form button:hover {
+            background: var(--teal-dark);
+        }
+        
+        .header-dropdown .success-msg {
+            display: none;
+            text-align: center;
+            color: var(--teal-dark);
+            font-weight: 500;
+            font-size: 0.875rem;
+            padding: 8px 0;
         }
         
         .logo-icon {
@@ -861,10 +983,29 @@
 <body>
     <header>
         <div class="container">
-            <a href="#" class="logo">
-                <div class="logo-icon">T</div>
-                <span class="logo-text">Taxon</span>
-            </a>
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <div class="logo-icon">T</div>
+                    <span class="logo-text">Taxon</span>
+                </a>
+                <div class="header-cta">
+                    <button class="header-cta-btn" onclick="toggleDropdown()" id="header-cta-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Sign Up for Launch Updates
+                    </button>
+                    <div class="header-dropdown" id="header-dropdown">
+                        <h4>Get notified when we go live</h4>
+                        <p>We'll send you one email when Taxon is ready. No spam.</p>
+                        <form class="header-dropdown-form" id="header-signup-form" action="https://formspree.io/f/mlgjkoaz" method="POST">
+                            <input type="email" name="email" placeholder="you@lawfirm.co.uk" required>
+                            <button type="submit">Submit</button>
+                        </form>
+                        <div class="success-msg" id="header-success-msg">
+                            ✓ You're on the list!
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     
@@ -1185,6 +1326,7 @@
     </footer>
     
     <script>
+        // Bottom signup form
         const form = document.getElementById('signup-form');
         const successMessage = document.getElementById('success-message');
         
@@ -1206,6 +1348,46 @@
             } catch (error) {
                 form.style.display = 'none';
                 successMessage.style.display = 'block';
+            }
+        });
+
+        // Header dropdown toggle
+        function toggleDropdown() {
+            const dropdown = document.getElementById('header-dropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const dropdown = document.getElementById('header-dropdown');
+            const btn = document.getElementById('header-cta-btn');
+            if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Header signup form
+        const headerForm = document.getElementById('header-signup-form');
+        const headerSuccess = document.getElementById('header-success-msg');
+        
+        headerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(headerForm);
+            
+            try {
+                const response = await fetch(headerForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    headerForm.style.display = 'none';
+                    headerSuccess.style.display = 'block';
+                }
+            } catch (error) {
+                headerForm.style.display = 'none';
+                headerSuccess.style.display = 'block';
             }
         });
     </script>
